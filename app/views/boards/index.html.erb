@@ -1,7 +1,7 @@
 <div class="d-flex align-items-center">
   <h1>掲示板一覧</h1>
   <div class="ml-auto boards__linkBox">
-    <a href="/boards/new" class="btn btn-outline-dark">新規作成</a>
+    <%= link_to '新規作成', new_board_path, class: 'btn btn-outline-dark' %>
   </div>
 </div>
 <table class="table table-hover boards__table">
@@ -12,6 +12,7 @@
       <th>作成者</th>
       <th>作成日時</th>
       <th>更新日時</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -22,6 +23,7 @@
       <td><%= board.name %></td>
       <td><%= board.created_at.to_s(:datetime_jp) %></td>
       <td><%= board.updated_at.to_s(:datetime_jp) %></td>
+      <td> <%= link_to '詳細', board, class: 'btn btn-outline-dark' %></td>
     </tr>
   <% end %>
   </tbody>
