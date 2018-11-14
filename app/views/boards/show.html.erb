@@ -8,4 +8,8 @@
   <div class="alert alert-primary"><%= flash[:notice] %></div>
 <% end %>  
 <%= render @board %>
-<%= render partial: 'comment_form', locals: { comment: @comment } %>
+<div class="p-comment_list">
+  <div class="p-comment_listTitle">コメント</div>
+  <%= render @board.comments %>
+</div>
+<%= render partial: 'comments/form', locals: { comment: @comment } %>
