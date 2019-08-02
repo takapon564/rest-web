@@ -1,25 +1,21 @@
-# README
+# rest-web  
+## required  
+- docker >= 18.09  
+- docker-compose >= 1.23.2  
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## How  to set up  
 
-Things you may want to cover:
+```
+$ cd ~/rest-web
 
-* Ruby version
+$ docker-compose up -d
 
-* System dependencies
+$ docker-compose run web ./bin/rails db:create
 
-* Configuration
+$ docker-compose run web ./bin/rails db:migrate
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# webapp
+$ docker-compose ps -d 
+rest-web_db_1    docker-entrypoint.sh mysqld      Up      3306/tcp, 33060/tcp   
+rest-web_web_1   bundle exec rails s -p 300 ...   Up      0.0.0.0:3000->3000/tcp
+``` 
+- localhost:3000 on web brouser
