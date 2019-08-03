@@ -24,6 +24,12 @@ jobs:
           name: image build
           command: |
             docker-compose up --d
+
+      - run:
+          name: migrate db
+          command: |
+            docker-compose exec web bundle exec rake db:create 
+            docker-compose exec web bundle exec rake db:migrate 
       - run:
           name: model test
           command: |
