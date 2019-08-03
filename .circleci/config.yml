@@ -26,9 +26,15 @@ jobs:
             docker-compose up -d
             
       - run:
-          name: model test
+          name: docker-compose ps
           command: |
-            docker-compose exec web bundle exec  rspec ./spec/models/
+            docker-compose ps
+
+      - run:
+          name: docker logs 
+          command: |
+            docker logs rest-web_web_1
+            
       - run:
           name: docker tag
           command: |
