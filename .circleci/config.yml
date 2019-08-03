@@ -27,16 +27,10 @@ jobs:
             docker-compose ps
 
       - run:
-          name: docker logs 
-          command: |
-            docker logs rest-web_web_1
-
-      - run:
           name: test
           command: |
             docker-compose exec web bundle exec  rspec ./spec/models/
             
-
       - run:
           name: docker tag
           command: |
