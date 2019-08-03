@@ -6,15 +6,15 @@ version: 2
 jobs:
   build:
     docker:
-      # specify the version you desire here
-      - image: circleci/ruby:2.4.5
+    machine:
+      image: circleci/classic:edge
 
     working_directory: ~/rest-web
 
     steps:
       - checkout
 
-      - setup_remote_docker
+      # - setup_remote_docker
 
       - run:
           name: image build
