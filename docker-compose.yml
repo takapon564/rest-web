@@ -1,7 +1,7 @@
 version: '3'
 services:
   web:
-    build: .
+    image: ${OWNER}/rest-web
     command: bundle exec rails s -p 3000 -b '0.0.0.0'
     volumes:
       - .:/app
@@ -12,7 +12,7 @@ services:
     tty: true
     stdin_open: true
   db:
-    image: mysql:5.7
+    image: ${OWNER}/my-db
     volumes:
       - db-volume:/var/lib/mysql
     environment:
