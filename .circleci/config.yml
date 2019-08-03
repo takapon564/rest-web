@@ -26,8 +26,8 @@ jobs:
           command: |
             docker-compose ps
       - run:
-          name: migrate db
-          command: docker-compose exec web bundle exec rails db:migrate
+          name: curl
+          command: curl localhost:3000
 
       - run:
           name: test
