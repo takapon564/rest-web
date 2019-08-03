@@ -17,6 +17,10 @@ jobs:
       - setup_remote_docker
 
       - run:
+          name: test
+          command: ls
+
+      - run:
           name: image build
           command: |
             docker-compose up --build
