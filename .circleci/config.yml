@@ -26,8 +26,8 @@ jobs:
           command: |
             docker-compose ps
       - run:
-          name: curl
-          command: curl localhost:3000
+          name: sleep for waiting launch db
+          command: sleep 15
 
       - run:
           name: test
