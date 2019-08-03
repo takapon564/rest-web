@@ -32,7 +32,7 @@ jobs:
             docker logs rest-web_web_1
 
       - run:
-           name: test
+          name: test
           command: |
             docker-compose exec web bundle exec  rspec ./spec/models/
             
