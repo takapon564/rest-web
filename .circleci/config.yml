@@ -1,0 +1,50 @@
+# Ruby CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-ruby/ for more details
+#
+version: 2
+jobs:
+  build:
+    docker:
+      # specify the version you desire here
+      - image: circleci/ruby:2.4.5
+
+    working_directory: ~/rest-web
+
+    steps:
+      - checkout
+
+      - setup_remote_docker
+
+      - run:
+          name: image build
+          command: |
+            docker-compose up --build
+      - run:
+          name: model test
+          command: |
+            docker-compose exec web bundle exec  rspec ./spec/models/
+      - run:
+          name: docker tag
+          command: |
+            docker tag ${OWNER}/rest-web ${OWNER}/rest-web:latest
+
+      - run:
+          name: docker login
+          command: |
+            docker login -u ${DOCKER_USER} -p ${DOCKER_PASS}
+          
+      - run:
+          name: docker push
+          command: |
+            docker push ${OWNER}/rest-web
+
+workflows:
+      version: 2
+      build-master:
+        jobs:
+          - build:
+              filters:
+                branches:
+                  only: master
+
