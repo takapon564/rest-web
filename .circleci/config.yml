@@ -40,7 +40,7 @@ jobs:
       - run:
           name: docker tag
           command: |
-            docker tag ${OWNER}/rest-web ${OWNER}/rest-web:latest
+            docker tag ${OWNER}/rest-web:latest ${OWNER}/rest-web:latest
 
       - run:
           name: docker login
