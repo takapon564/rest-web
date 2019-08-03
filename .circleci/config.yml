@@ -23,7 +23,7 @@ jobs:
       - run:
           name: image build
           command: |
-            docker-compose up --build
+            docker-compose up --d
       - run:
           name: model test
           command: |
