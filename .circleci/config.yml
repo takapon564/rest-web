@@ -25,7 +25,7 @@ jobs:
             sleep 10
 
       - run:
-          name: test
+          name: migrate db
           command: docker-compose run web rails db:create db:migrate
 
       - run:
