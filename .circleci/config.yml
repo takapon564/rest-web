@@ -52,7 +52,7 @@ jobs:
           fingerprints:
             - "d9:c3:96:88:96:90:cb:ae:4d:23:66:1e:a9:02:3d:56"
           
-      - run: ssh ${USER_NAME}@${HOST_NAME}
+      - run: ssh ${HOST_NAME}
 
       - run:
            name: deploy to ec2
