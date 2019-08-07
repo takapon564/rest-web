@@ -55,9 +55,10 @@ jobs:
       - run:
           name: deploy to ec2
           command: |
-           cd rest-web
-           git pull
-           docker-compose up -d
+            ssh ${USER_NAME}@${HOST_NAME} 
+            cd rest-web
+            git pull
+            docker-compose up -d
 
 workflows:
       version: 2
@@ -67,4 +68,4 @@ workflows:
               filters:
                 branches:
                   only: master
-                  
+
