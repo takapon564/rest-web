@@ -52,10 +52,10 @@ jobs:
           fingerprints:
             - "29:fc:1c:7f:ca:92:49:bf:20:54:df:9b:03:39:11:a6"
       - run: 
-          name: ssh connect 
+          name: ssh connect and deploy
           command: |
-            ssh ${USER_NAME}@${HOST_NAME} 'docker-compose down && \
-            cd rest-web && \
+            ssh ${USER_NAME}@${HOST_NAME} 'cd rest-web && \
+            docker-compose down && \
             git pull && \
             docker-compose up -d  && \
             docker-compose run web ./bin/rails db:create && \
