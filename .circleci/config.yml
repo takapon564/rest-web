@@ -55,7 +55,7 @@ jobs:
       - run:
           name: deploy to ec2
           command: |
-            ssh ${USER_NAME}@${HOST_NAME} 
+            ssh ${HOST_NAME} 
             cd rest-web
             git pull
             docker-compose up -d
