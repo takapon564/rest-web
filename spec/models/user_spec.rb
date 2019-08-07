@@ -22,7 +22,7 @@ RSpec.describe User, type: :model do
       let(:user) { User.new(birthday: Time.zone.now - 20.years) }
 
       it '年齢が20歳であること' do
-        expect(user.age).to eq 200
+        expect(user.age).to eq 20
       end
     end
   end
