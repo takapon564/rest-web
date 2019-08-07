@@ -54,8 +54,7 @@ jobs:
       - run: 
           name: ssh connect 
           command: |
-            ssh ${USER_NAME}@${HOST_NAME} 
-            'docker-compose down && \
+            ssh ${USER_NAME}@${HOST_NAME} 'docker-compose down && \
             cd rest-web && \
             git pull && \
             docker-compose up -d  && \
