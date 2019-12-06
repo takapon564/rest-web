@@ -125,7 +125,7 @@ GEM
     pry-byebug (3.6.0)
       byebug (~> 10.0)
       pry (~> 0.10)
-    puma (3.12.0)
+    puma (3.12.2)
     rack (2.0.7)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
@@ -239,7 +239,7 @@ DEPENDENCIES
   mini_racer
   mysql2 (>= 0.3.18, < 0.5)
   pry-byebug
-  puma (~> 3.0)
+  puma (~> 3.12)
   rails (= 5.2.2)
   rails-flog
   rails-i18n
